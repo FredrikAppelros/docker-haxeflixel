@@ -12,12 +12,5 @@ RUN wget -qO /tmp/haxe.tar.gz http://www.openfl.org/builds/haxe/haxe-3.2.1-linux
     tar xzf /tmp/haxe.tar.gz -C /tmp && \
     /tmp/install-haxe.sh -y
 
-# Change into non-privileged user
-RUN adduser --quiet --disabled-login --gecos "" flixel
-USER flixel
-
-# Setup Haxelib
-RUN haxelib setup ~/haxelib
-
 # Install HaxeFlixel
 RUN haxelib install flixel
